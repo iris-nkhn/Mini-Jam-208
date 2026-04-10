@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://km240aesxxe7"]
 
 [ext_resource type="Script" uid="uid://b7puobpx1lsk0" path="res://scenes/leader/controller.gd" id="1_juoh2"]
-[ext_resource type="Script" uid="uid://b2pl8h283faou" path="res://scenes/leader/character_body_2d.gd" id="2_83ewn"]
+[ext_resource type="Script" uid="uid://b2pl8h283faou" path="res://scenes/leader/body.gd" id="2_83ewn"]
 [ext_resource type="Texture2D" uid="uid://bfkdovg11bbud" path="res://icon.svg" id="3_qisqt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_juoh2"]
@@ -9,12 +9,16 @@
 [node name="Controller" type="Node2D" unique_id=1731262031]
 script = ExtResource("1_juoh2")
 
-[node name="Body" type="CharacterBody2D" parent="." unique_id=1281150013]
-motion_mode = 1
+[node name="Body" type="CharacterBody2D" parent="." unique_id=1131739087]
+collision_mask = 0
 script = ExtResource("2_83ewn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body" unique_id=684781117]
 shape = SubResource("CircleShape2D_juoh2")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Body" unique_id=874571746]
+position = Vector2(0, 12)
+node_a = NodePath("..")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=872445591]
 scale = Vector2(0.2, 0.2)

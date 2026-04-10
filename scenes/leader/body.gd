@@ -12,8 +12,11 @@ func _process(delta: float) -> void:
 	pass
 
 func _physics_process(delta: float) -> void:
-	velocity = goal.normalized() * delta * speed
+	var distance = global_position.distance_to(goal)
+	var max_speed = (distance / delta)
+	velocity = goal.normalized() * min(speed,max_speed) * delta
 	move_and_slide()
+
 	
 	
 	pass

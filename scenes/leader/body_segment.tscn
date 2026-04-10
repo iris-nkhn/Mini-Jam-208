@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://7mgckfxweudl"]
+
+[ext_resource type="Script" uid="uid://djel5lydbe3nc" path="res://scenes/leader/body_segment.gd" id="1_bj2xa"]
+
+[node name="BodySegment" type="Node2D" unique_id=1458478297]
+script = ExtResource("1_bj2xa")
