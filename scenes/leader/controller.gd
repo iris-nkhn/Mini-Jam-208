@@ -7,6 +7,7 @@ var goal : Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$Body/RemoteTransform2D.remote_path = get_parent().get_path()
 	pass # Replace with function body.
 
 
@@ -22,11 +23,8 @@ func _process(delta: float) -> void:
 func get_goal_position() ->  Vector2:
 	return goal.global_position
 	
-func _draw() -> void:
-	if goal != null:
-		draw_line(Vector2(0,0),  goal.global_position - global_position, debug_color, 1.0)
-	draw_circle(Vector2(0,0),safe_dist, debug_color,false)
+
 		
-func move_attached(node : Node2D) -> void:
-	node.global_position = body.global_position
-	body.position = Vector2(0,0)
+#func move_attached(node : Node2D) -> void:
+	#node.global_position = body.global_position
+	#body.position = Vector2(0,0)

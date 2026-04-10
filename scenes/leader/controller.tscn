@@ -16,10 +16,6 @@ script = ExtResource("2_83ewn")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body" unique_id=684781117]
 shape = SubResource("CircleShape2D_juoh2")
 
-[node name="PinJoint2D" type="PinJoint2D" parent="Body" unique_id=874571746]
-position = Vector2(0, 12)
-node_a = NodePath("..")
-
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=872445591]
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_qisqt")

@@ -1,18 +1,23 @@
 [gd_scene format=3 uid="uid://c4noyvt4p4kvi"]
 
-[ext_resource type="Script" uid="uid://dq26ynyuch1tu" path="res://scenes/leader/leader.gd" id="1_juoh2"]
-[ext_resource type="PackedScene" uid="uid://km240aesxxe7" path="res://scenes/leader/controller.tscn" id="2_qisqt"]
+[ext_resource type="Script" uid="uid://b2pl8h283faou" path="res://scenes/leader/body.gd" id="1_mnww2"]
 [ext_resource type="PackedScene" uid="uid://7mgckfxweudl" path="res://scenes/leader/body_segment.tscn" id="4_jbwig"]
 [ext_resource type="Script" uid="uid://rt3fp5d33kgr" path="res://scenes/leader/mouse_follower.gd" id="4_mnww2"]
+[ext_resource type="Texture2D" uid="uid://bfkdovg11bbud" path="res://icon.svg" id="4_td0t5"]
 
-[node name="Leader" type="Node2D" unique_id=1093713921]
-script = ExtResource("1_juoh2")
+[sub_resource type="CircleShape2D" id="CircleShape2D_jbwig"]
 
-[node name="Controller" parent="." unique_id=1731262031 instance=ExtResource("2_qisqt")]
-debug_color = Color(0.2866906, 0.5010136, 1, 1)
-safe_dist = 0.0
+[node name="Leader" type="CharacterBody2D" unique_id=1288376457]
+script = ExtResource("1_mnww2")
 
 [node name="MouseFollower" type="Node2D" parent="." unique_id=1277465623]
 script = ExtResource("4_mnww2")
 
 [node name="BodySegment" parent="." unique_id=1458478297 instance=ExtResource("4_jbwig")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=168550786]
+shape = SubResource("CircleShape2D_jbwig")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1054227989]
+scale = Vector2(0.3932153, 0.3932153)
+texture = ExtResource("4_td0t5")

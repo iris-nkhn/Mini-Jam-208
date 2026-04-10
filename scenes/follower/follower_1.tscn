@@ -1,15 +1,23 @@
 [gd_scene format=3 uid="uid://c3a7ai6m6vb70"]
 
-[ext_resource type="Script" uid="uid://i5035gcsyrnn" path="res://scenes/follower/follower_1.gd" id="1_b5sj2"]
 [ext_resource type="PackedScene" uid="uid://7mgckfxweudl" path="res://scenes/leader/body_segment.tscn" id="2_846ri"]
-[ext_resource type="PackedScene" uid="uid://km240aesxxe7" path="res://scenes/leader/controller.tscn" id="2_bhxwe"]
+[ext_resource type="Texture2D" uid="uid://bfkdovg11bbud" path="res://icon.svg" id="3_bhxwe"]
 
-[node name="Follower1" type="Node2D" unique_id=1367080576]
-script = ExtResource("1_b5sj2")
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_b5sj2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bhxwe"]
+
+[node name="Follower1" type="RigidBody2D" unique_id=1760970241]
+scale = Vector2(1, 1.0097481)
+physics_material_override = SubResource("PhysicsMaterial_b5sj2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1651949847]
+shape = SubResource("CircleShape2D_bhxwe")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1435422461]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_bhxwe")
 
 [node name="BodySegment" parent="." unique_id=1458478297 instance=ExtResource("2_846ri")]
-
-[node name="Controller" parent="." unique_id=1731262031 instance=ExtResource("2_bhxwe")]
-debug_color = Color(0, 0.7058824, 0, 1)
-speed = 50000.0
-safe_dist = 0.0
+rotation = 1.5660423
+scale = Vector2(0.99999994, 0.99999994)

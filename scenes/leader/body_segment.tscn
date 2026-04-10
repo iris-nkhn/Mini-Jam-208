@@ -4,3 +4,6 @@
 
 [node name="BodySegment" type="Node2D" unique_id=1458478297]
 script = ExtResource("1_bj2xa")
+
+[node name="PinJoint2D" type="DampedSpringJoint2D" parent="." unique_id=404812886]
+rest_length = 25.0
