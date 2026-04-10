@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c3a7ai6m6vb70"]
+
+[ext_resource type="Script" uid="uid://i5035gcsyrnn" path="res://scenes/follower/follower_1.gd" id="1_b5sj2"]
+[ext_resource type="PackedScene" uid="uid://km240aesxxe7" path="res://scenes/leader/controller.tscn" id="2_bhxwe"]
+
+[node name="Follower1" type="Node2D" unique_id=1367080576]
+script = ExtResource("1_b5sj2")
+
+[node name="Controller" parent="." unique_id=1731262031 instance=ExtResource("2_bhxwe")]
+goaltype = 1

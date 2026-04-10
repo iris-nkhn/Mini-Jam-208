@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://nlc7wmk4ddmy"]
+
+[ext_resource type="Script" uid="uid://c3b1qba7dlii" path="res://scenes/banner/banner.gd" id="1_yrcs6"]
+[ext_resource type="Texture2D" uid="uid://bfkdovg11bbud" path="res://icon.svg" id="2_aarb0"]
+
+[node name="Banner" type="Node2D" unique_id=402454794]
+script = ExtResource("1_yrcs6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2029213662]
+texture = ExtResource("2_aarb0")

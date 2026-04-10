@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c4noyvt4p4kvi"]
+
+[ext_resource type="Script" uid="uid://dq26ynyuch1tu" path="res://scenes/leader/leader.gd" id="1_juoh2"]
+[ext_resource type="PackedScene" uid="uid://km240aesxxe7" path="res://scenes/leader/controller.tscn" id="2_qisqt"]
+[ext_resource type="Script" uid="uid://rt3fp5d33kgr" path="res://scenes/leader/mouse_follower.gd" id="4_mnww2"]
+
+[node name="Leader" type="Node2D" unique_id=1093713921]
+script = ExtResource("1_juoh2")
+
+[node name="Controller" parent="." unique_id=1731262031 instance=ExtResource("2_qisqt")]
+
+[node name="MouseFollower" type="Node2D" parent="." unique_id=1277465623]
+script = ExtResource("4_mnww2")
