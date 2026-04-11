@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bfkdovg11bbud" path="res://icon.svg" id="3_bhxwe"]
 
 [node name="Follower1" type="PathFollow2D" unique_id=491673986]
+loop = false
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1435422461]
 scale = Vector2(0.1, 0.1)
