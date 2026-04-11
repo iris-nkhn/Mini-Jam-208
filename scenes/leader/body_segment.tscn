@@ -2,8 +2,5 @@
 
 [ext_resource type="Script" uid="uid://djel5lydbe3nc" path="res://scenes/leader/body_segment.gd" id="1_bj2xa"]
 
-[node name="BodySegment" type="Node2D" unique_id=1458478297]
+[node name="BodySegment" type="PathFollow2D" unique_id=1034836642]
 script = ExtResource("1_bj2xa")
-
-[node name="PinJoint2D" type="DampedSpringJoint2D" parent="." unique_id=404812886]
-rest_length = 25.0

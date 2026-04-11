@@ -1,19 +1,21 @@
 [gd_scene format=3 uid="uid://c4noyvt4p4kvi"]
 
 [ext_resource type="Script" uid="uid://b2pl8h283faou" path="res://scenes/leader/body.gd" id="1_mnww2"]
-[ext_resource type="PackedScene" uid="uid://7mgckfxweudl" path="res://scenes/leader/body_segment.tscn" id="4_jbwig"]
 [ext_resource type="Script" uid="uid://rt3fp5d33kgr" path="res://scenes/leader/mouse_follower.gd" id="4_mnww2"]
 [ext_resource type="Texture2D" uid="uid://bfkdovg11bbud" path="res://icon.svg" id="4_td0t5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jbwig"]
 
+[sub_resource type="Curve2D" id="Curve2D_mnww2"]
+
 [node name="Leader" type="CharacterBody2D" unique_id=1288376457]
+rotation = 0.002458863
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_mnww2")
 
 [node name="MouseFollower" type="Node2D" parent="." unique_id=1277465623]
 script = ExtResource("4_mnww2")
-
-[node name="BodySegment" parent="." unique_id=1458478297 instance=ExtResource("4_jbwig")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=168550786]
 shape = SubResource("CircleShape2D_jbwig")
@@ -21,3 +23,7 @@ shape = SubResource("CircleShape2D_jbwig")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1054227989]
 scale = Vector2(0.3932153, 0.3932153)
 texture = ExtResource("4_td0t5")
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1570845562]
+top_level = true
+curve = SubResource("Curve2D_mnww2")
