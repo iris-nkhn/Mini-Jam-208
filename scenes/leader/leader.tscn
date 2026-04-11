@@ -29,3 +29,5 @@ top_level = true
 curve = SubResource("Curve2D_mnww2")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=575253066]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=155577314]

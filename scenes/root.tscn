@@ -1,9 +1,49 @@
 [gd_scene format=3 uid="uid://cqak04x7ktl1r"]
 
 [ext_resource type="PackedScene" uid="uid://cq6bsdr6wjdp6" path="res://scenes/necro/necro.tscn" id="1_j5px3"]
+[ext_resource type="Texture2D" uid="uid://dkagkyf12bu0v" path="res://assets/characters/necrolord_spritesheet.png" id="2_twpsu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lrqlo"]
+atlas = ExtResource("2_twpsu")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqa0i"]
+atlas = ExtResource("2_twpsu")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jh1ax"]
+atlas = ExtResource("2_twpsu")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kycxp"]
+atlas = ExtResource("2_twpsu")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j287u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lrqlo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqa0i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jh1ax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kycxp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Root" type="Node2D" unique_id=2145283830]
 
 [node name="Necro" parent="." unique_id=1549876970 instance=ExtResource("1_j5px3")]
 position = Vector2(343, 249)
-motion_mode = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Necro" unique_id=2053515525]
+sprite_frames = SubResource("SpriteFrames_j287u")
+frame_progress = 0.62341744

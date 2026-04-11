@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 Banner="*uid://nlc7wmk4ddmy"
 Leader="*uid://c4noyvt4p4kvi"
 
+[display]
+
+mouse_cursor/custom_image="uid://7h8co5cgl7pa"
+
 [input]
 
 Left={
