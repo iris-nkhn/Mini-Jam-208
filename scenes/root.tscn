@@ -1,3 +1,9 @@
 [gd_scene format=3 uid="uid://cqak04x7ktl1r"]
 
+[ext_resource type="PackedScene" uid="uid://cq6bsdr6wjdp6" path="res://scenes/necro/necro.tscn" id="1_j5px3"]
+
 [node name="Root" type="Node2D" unique_id=2145283830]
+
+[node name="Necro" parent="." unique_id=1549876970 instance=ExtResource("1_j5px3")]
+position = Vector2(343, 249)
+motion_mode = 1

@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://c3a7ai6m6vb70"]
 
+[ext_resource type="Script" uid="uid://bmulpyo3hugri" path="res://scenes/follower/area_2d.gd" id="2_b5sj2"]
 [ext_resource type="Texture2D" uid="uid://bfkdovg11bbud" path="res://icon.svg" id="3_bhxwe"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s2ble"]
+radius = 20.0
 
 [node name="Follower1" type="PathFollow2D" unique_id=491673986]
 loop = false
@@ -8,3 +12,9 @@ loop = false
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1435422461]
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_bhxwe")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1529005253]
+script = ExtResource("2_b5sj2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=870890676]
+shape = SubResource("CircleShape2D_s2ble")

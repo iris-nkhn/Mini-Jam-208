@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cq6bsdr6wjdp6"]
+
+[ext_resource type="Script" uid="uid://bysn6bgdslxum" path="res://scenes/necro/necro.gd" id="1_jmj1b"]
+[ext_resource type="Texture2D" uid="uid://bfkdovg11bbud" path="res://icon.svg" id="2_7h2ay"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lkvh4"]
+
+[node name="Necro" type="CharacterBody2D" unique_id=1549876970]
+motion_mode = 1
+script = ExtResource("1_jmj1b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=931468741]
+shape = SubResource("CircleShape2D_lkvh4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1747640233]
+scale = Vector2(0.135, 0.135)
+texture = ExtResource("2_7h2ay")

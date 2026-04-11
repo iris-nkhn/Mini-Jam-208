@@ -7,6 +7,7 @@ var segments = 10
 var tail : Array[PathFollow2D]
 var debug_color : Color = Color(0.808, 0.0, 0.0, 1.0)
 var path : Curve2D = Curve2D.new()
+@onready var enclosed_area : Area2D = $Area2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	initialize_tail()
@@ -25,11 +26,7 @@ func _process(delta: float) -> void:
 		path.remove_point(0)
 	queue_redraw()
 
-	if check_closed_loop():
-		var points = path.get_baked_points()
-		var polygon : CollisionPolygon2D = CollisionPolygon2D.new()
-		polygon.set_polygon(points)
-	pass
+
 	
 func _draw() -> void:
 	if goal != null:
@@ -68,15 +65,41 @@ func initialize_tail() -> void:
 		tail.append(segment)
 		$Path2D.add_child(segment)
 		segment.set_progress(16 * i)
+		
 
 func update_tail() -> void:
 	for i in tail.size():
 		tail[i].progress_ratio = 1 - 0.10 * i
+		
 
 func check_closed_loop() -> bool:
 	var A = path.get_closest_point(position)
 	var B = position
-	draw
 	if to_global(path.get_closest_point(position)).distance_to(global_position) <= 10:
 		return true
 	else: return false
+
+func _on_area_entered(area: Area2D, source: Area2D) -> void:
+	if area.get_parent() == tail[0] && source.get_parent() == tail.back():
+		print("circulo cerrado")
+		circle_within()
+	pass
+	
+func circle_within() -> void:
+	var points = path.get_baked_points()
+	var polygon : CollisionPolygon2D = CollisionPolygon2D.new()
+	polygon.set_polygon(points)
+	enclosed_area.add_child(polygon)
+	var body_list = enclosed_area.get_overlapping_bodies()
+	for i in body_list:
+		if i.is_class("grave"):
+			var grave_type
+			remove_grave(i)
+			revive(grave_type)
+	
+	pass
+func remove_grave(a) -> void:
+	pass
+
+func revive(b) -> void:
+	pass

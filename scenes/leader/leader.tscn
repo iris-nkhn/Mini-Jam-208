@@ -27,3 +27,5 @@ texture = ExtResource("4_td0t5")
 [node name="Path2D" type="Path2D" parent="." unique_id=1570845562]
 top_level = true
 curve = SubResource("Curve2D_mnww2")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=575253066]
