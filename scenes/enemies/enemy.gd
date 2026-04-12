@@ -2,10 +2,13 @@ class_name Enemy extends CharacterBody2D
 
 enum undead_types{NORMAL, SWORD, ARCHER, HALBERD}
 @export var type : undead_types
-var target : Node2D = Necro
+var default_target : Node2D = Necro
+var target : Node2D = default_target
 @export var speed : float = 10
 @export var attack_radius : float = 50
 @export var damage : int = 1
+@export var attack_delay : float = 0.5
+var attack_delay_counter : float = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,10 +23,12 @@ func _draw() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	queue_redraw()
-	attack_target()
+
 	pass
 
 func _physics_process(delta: float) -> void:
+	if target == null:
+		target = default_target
 	move_towards_target()
 	
 	pass
@@ -39,7 +44,3 @@ func move_towards_target() -> void:
 	velocity = target.global_position - global_position
 	velocity = velocity.normalized() * speed
 	move_and_slide()
-
-func attack_target() -> void:
-	if global_position.distance_squared_to(target.global_position) <= attack_radius:
-		target.take_damage(damage)

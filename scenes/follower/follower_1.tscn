@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://d0rurjs1si8ow" path="res://assets/characters/skelly_spritesheet.png" id="1_b5sj2"]
 [ext_resource type="Script" uid="uid://i5035gcsyrnn" path="res://scenes/follower/follower_1.gd" id="1_bhxwe"]
 [ext_resource type="Script" uid="uid://bmulpyo3hugri" path="res://scenes/follower/area_2d.gd" id="2_b5sj2"]
+[ext_resource type="Script" uid="uid://0eivwrc7aqf1" path="res://scenes/follower/animatable_body_2d.gd" id="4_846ri"]
 
 [sub_resource type="Animation" id="Animation_bhxwe"]
 length = 0.001
@@ -378,6 +379,8 @@ shape = SubResource("CircleShape2D_s2ble")
 
 [node name="AnimatableBody2D" type="CharacterBody2D" parent="." unique_id=641382878]
 collision_mask = 0
+motion_mode = 1
+script = ExtResource("4_846ri")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=239344784]
 shape = SubResource("CircleShape2D_s2ble")
