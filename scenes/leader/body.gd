@@ -3,11 +3,13 @@ class_name leader extends CharacterBody2D
 #esto es un global coords
 var goal : Vector2 
 var speed: float = 10000
-var segments = 10
+var initial_segments = 10
 var tail : Array[PathFollow2D]
 var debug_color : Color = Color(0.808, 0.0, 0.0, 1.0)
 var path : Curve2D = Curve2D.new()
 enum undead_types{NORMAL, SWORD, ARCHER, HALBERD}
+var life : int = 5
+var damage : int = 0
 
 @onready var enclosed_area : Area2D = $Area2D
 # Called when the node enters the scene tree for the first time.
@@ -21,7 +23,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	update_tail()
 
 	queue_redraw()
@@ -61,8 +63,14 @@ func new_segment(undead_type : undead_types) -> Node2D:
 	scene.set_sprite(undead_type)
 	return scene
 
+func remove_segment() -> void:
+	var segment_to_lose = tail.pop_back()
+	segment_to_lose.queue_free()
+	
+	pass
+
 func initialize_tail() -> void:
-	for i in segments - 1 :
+	for i in initial_segments - 1 :
 		var segment : PathFollow2D = new_segment(undead_types.NORMAL)
 		
 		segment.set_progress(16 * i)
@@ -80,8 +88,7 @@ func update_tail() -> void:
 		path.remove_point(0)
 
 func check_closed_loop() -> bool:
-	var A = path.get_closest_point(position)
-	var B = position
+
 	if to_global(path.get_closest_point(position)).distance_to(global_position) <= 10:
 		return true
 	else: return false
@@ -118,3 +125,13 @@ func check_within() -> void:
 			new_segment(grave_type)
 	if polygon != null:
 		polygon.queue_free()
+
+func _on_damage_taken(_damage : int) -> void:
+	damage += _damage
+	if damage >= life:
+		damage = 0
+		lose_life()
+		
+func lose_life() -> void:
+	
+	pass

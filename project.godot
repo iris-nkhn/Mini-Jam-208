@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Banner="*uid://nlc7wmk4ddmy"
 Leader="*uid://c4noyvt4p4kvi"
+Necro="*uid://cq6bsdr6wjdp6"
 
 [display]
 

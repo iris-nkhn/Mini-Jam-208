@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cq6bsdr6wjdp6"]
 
 [ext_resource type="Script" uid="uid://bysn6bgdslxum" path="res://scenes/necro/necro.gd" id="1_jmj1b"]
-[ext_resource type="Texture2D" uid="uid://bfkdovg11bbud" path="res://icon.svg" id="2_7h2ay"]
+[ext_resource type="Texture2D" uid="uid://dkagkyf12bu0v" path="res://assets/characters/necrolord_spritesheet.png" id="2_7h2ay"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lkvh4"]
 
