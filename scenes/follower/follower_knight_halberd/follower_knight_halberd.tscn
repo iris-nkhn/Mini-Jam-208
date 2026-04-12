@@ -1,10 +1,8 @@
-[gd_scene format=3 uid="uid://u7v3yrrbdr5j"]
+[gd_scene format=3 uid="uid://buixk4nmrv2nu"]
 
-[ext_resource type="Script" uid="uid://i5035gcsyrnn" path="res://scenes/follower/follower_1.gd" id="1_r7kja"]
-[ext_resource type="Texture2D" uid="uid://bkb7wf8fj2vc3" path="res://assets/characters/skelly_sword_spritesheet.png" id="2_oh0rp"]
-[ext_resource type="Texture2D" uid="uid://bw6kyh3dt73kk" path="res://assets/characters/skelly_halberd_spritesheet.png" id="3_syrlm"]
-[ext_resource type="Texture2D" uid="uid://gslkgrkavjbg" path="res://assets/characters/skelly_archer_spritesheet.png" id="4_mi5pi"]
-[ext_resource type="Texture2D" uid="uid://dkagkyf12bu0v" path="res://assets/characters/necrolord_spritesheet.png" id="5_nfdcu"]
+[ext_resource type="Script" uid="uid://i5035gcsyrnn" path="res://scenes/follower/follower_1.gd" id="1_h3cjg"]
+[ext_resource type="Texture2D" uid="uid://d0rurjs1si8ow" path="res://assets/characters/skelly_spritesheet.png" id="2_afl7l"]
+[ext_resource type="Script" uid="uid://bmulpyo3hugri" path="res://scenes/follower/area_2d.gd" id="3_qjndj"]
 
 [sub_resource type="Animation" id="Animation_bhxwe"]
 length = 0.001
@@ -237,7 +235,7 @@ tracks/0/keys = {
 "values": [16, 17, 18, 19]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_dubn7"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sg5ns"]
 _data = {
 &"RESET": SubResource("Animation_bhxwe"),
 &"attack_down": SubResource("Animation_846ri"),
@@ -254,70 +252,70 @@ _data = {
 &"move_up": SubResource("Animation_876y2")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_diklv"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_glx11"]
 animation = &"attack_up"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_imy7y"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_unjuf"]
 animation = &"attack_down"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0pf0l"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7kyet"]
 animation = &"attack_left"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_toq3h"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_r3n1i"]
 animation = &"attack_right"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_kxqf4"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_diklv")
+blend_point_0/node = SubResource("AnimationNodeAnimation_glx11")
 blend_point_0/pos = Vector2(0, 1)
-blend_point_1/node = SubResource("AnimationNodeAnimation_imy7y")
+blend_point_1/node = SubResource("AnimationNodeAnimation_unjuf")
 blend_point_1/pos = Vector2(0, -1)
-blend_point_2/node = SubResource("AnimationNodeAnimation_0pf0l")
+blend_point_2/node = SubResource("AnimationNodeAnimation_7kyet")
 blend_point_2/pos = Vector2(-1, 0)
-blend_point_3/node = SubResource("AnimationNodeAnimation_toq3h")
+blend_point_3/node = SubResource("AnimationNodeAnimation_r3n1i")
 blend_point_3/pos = Vector2(1, 0)
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rkf5i"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c6kcv"]
 animation = &"idle_down"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5hg5b"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_w6ypj"]
 animation = &"idle_up"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_i3d0j"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hc7si"]
 animation = &"idle_left"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qv7a4"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_elx7m"]
 animation = &"idle_right"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_y6tfh"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_rkf5i")
+blend_point_0/node = SubResource("AnimationNodeAnimation_c6kcv")
 blend_point_0/pos = Vector2(0, -1)
-blend_point_1/node = SubResource("AnimationNodeAnimation_5hg5b")
+blend_point_1/node = SubResource("AnimationNodeAnimation_w6ypj")
 blend_point_1/pos = Vector2(0, 1)
-blend_point_2/node = SubResource("AnimationNodeAnimation_i3d0j")
+blend_point_2/node = SubResource("AnimationNodeAnimation_hc7si")
 blend_point_2/pos = Vector2(-1, 0)
-blend_point_3/node = SubResource("AnimationNodeAnimation_qv7a4")
+blend_point_3/node = SubResource("AnimationNodeAnimation_elx7m")
 blend_point_3/pos = Vector2(1, 0)
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hbfi7"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_agffw"]
 animation = &"move_down"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qpy6c"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_75ii2"]
 animation = &"move_up"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vr5vr"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pebuw"]
 animation = &"move_left"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_702w7"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8ktwh"]
 animation = &"move_right"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_v7p8g"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_hbfi7")
+blend_point_0/node = SubResource("AnimationNodeAnimation_agffw")
 blend_point_0/pos = Vector2(0, -1)
-blend_point_1/node = SubResource("AnimationNodeAnimation_qpy6c")
+blend_point_1/node = SubResource("AnimationNodeAnimation_75ii2")
 blend_point_1/pos = Vector2(0, 1)
-blend_point_2/node = SubResource("AnimationNodeAnimation_vr5vr")
+blend_point_2/node = SubResource("AnimationNodeAnimation_pebuw")
 blend_point_2/pos = Vector2(-1, 0)
-blend_point_3/node = SubResource("AnimationNodeAnimation_702w7")
+blend_point_3/node = SubResource("AnimationNodeAnimation_8ktwh")
 blend_point_3/pos = Vector2(1, 0)
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wtktj"]
@@ -335,7 +333,7 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_63fyf"]
 
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ey6mn"]
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_p55rb"]
 states/Start/position = Vector2(197, 97)
 states/attack_blend_space/node = SubResource("AnimationNodeBlendSpace2D_kxqf4")
 states/attack_blend_space/position = Vector2(524, 40)
@@ -346,92 +344,40 @@ states/move_blend_space/position = Vector2(664, 164)
 transitions = ["Start", "idle_blend_space", SubResource("AnimationNodeStateMachineTransition_wtktj"), "idle_blend_space", "move_blend_space", SubResource("AnimationNodeStateMachineTransition_y86m2"), "move_blend_space", "idle_blend_space", SubResource("AnimationNodeStateMachineTransition_2empm"), "move_blend_space", "attack_blend_space", SubResource("AnimationNodeStateMachineTransition_lkbbp"), "attack_blend_space", "move_blend_space", SubResource("AnimationNodeStateMachineTransition_u440e"), "attack_blend_space", "idle_blend_space", SubResource("AnimationNodeStateMachineTransition_r77ds"), "idle_blend_space", "attack_blend_space", SubResource("AnimationNodeStateMachineTransition_63fyf")]
 graph_offset = Vector2(0, -40.35391)
 
-[node name="Followers" type="Node2D" unique_id=1610558681]
+[sub_resource type="CircleShape2D" id="CircleShape2D_s2ble"]
+radius = 20.0
 
-[node name="FollowerSword" type="Node2D" parent="." unique_id=1626172205]
-script = ExtResource("1_r7kja")
-metadata/_custom_type_script = "uid://i5035gcsyrnn"
+[node name="Follower1" type="PathFollow2D" unique_id=491673986]
+rotates = false
+loop = false
+script = ExtResource("1_h3cjg")
 
-[node name="Sprite2D" type="Sprite2D" parent="FollowerSword" unique_id=161639944]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1435422461]
 texture_filter = 1
 scale = Vector2(2, 2)
-texture = ExtResource("2_oh0rp")
+texture = ExtResource("2_afl7l")
 hframes = 12
 vframes = 4
 frame = 4
 
-[node name="CharacterAnimationPlayer" type="AnimationPlayer" parent="FollowerSword/Sprite2D" unique_id=2040927575]
-libraries/ = SubResource("AnimationLibrary_dubn7")
+[node name="CharacterAnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=985275758]
+libraries/ = SubResource("AnimationLibrary_sg5ns")
 
-[node name="CharacterAnimationTree" type="AnimationTree" parent="FollowerSword/Sprite2D" unique_id=773136173]
-tree_root = SubResource("AnimationNodeStateMachine_ey6mn")
+[node name="CharacterAnimationTree" type="AnimationTree" parent="Sprite2D" unique_id=1950255374]
+tree_root = SubResource("AnimationNodeStateMachine_p55rb")
 anim_player = NodePath("../AnimationPlayer")
 parameters/attack_blend_space/blend_position = Vector2(0, 0)
 parameters/idle_blend_space/blend_position = Vector2(-0.0008110404, 0)
 parameters/move_blend_space/blend_position = Vector2(0, 0)
 
-[node name="FollowerHalberd" type="Node2D" parent="." unique_id=625622874]
-script = ExtResource("1_r7kja")
-metadata/_custom_type_script = "uid://i5035gcsyrnn"
+[node name="Area2D" type="Area2D" parent="." unique_id=1274580573]
+script = ExtResource("3_qjndj")
 
-[node name="Sprite2D" type="Sprite2D" parent="FollowerHalberd" unique_id=2133001179]
-texture_filter = 1
-scale = Vector2(2, 2)
-texture = ExtResource("3_syrlm")
-hframes = 12
-vframes = 4
-frame = 4
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=870890676]
+shape = SubResource("CircleShape2D_s2ble")
 
-[node name="CharacterAnimationPlayer" type="AnimationPlayer" parent="FollowerHalberd/Sprite2D" unique_id=2141263176]
-libraries/ = SubResource("AnimationLibrary_dubn7")
+[node name="AnimatableBody2D" type="CharacterBody2D" parent="." unique_id=641382878]
+collision_mask = 0
 
-[node name="CharacterAnimationTree" type="AnimationTree" parent="FollowerHalberd/Sprite2D" unique_id=31846630]
-tree_root = SubResource("AnimationNodeStateMachine_ey6mn")
-anim_player = NodePath("../AnimationPlayer")
-parameters/attack_blend_space/blend_position = Vector2(0, 0)
-parameters/idle_blend_space/blend_position = Vector2(-0.0008110404, 0)
-parameters/move_blend_space/blend_position = Vector2(0, 0)
-
-[node name="FollowerArcher" type="Node2D" parent="." unique_id=664899114]
-script = ExtResource("1_r7kja")
-metadata/_custom_type_script = "uid://i5035gcsyrnn"
-
-[node name="Sprite2D" type="Sprite2D" parent="FollowerArcher" unique_id=285072580]
-texture_filter = 1
-scale = Vector2(2, 2)
-texture = ExtResource("4_mi5pi")
-hframes = 12
-vframes = 4
-frame = 4
-
-[node name="CharacterAnimationPlayer" type="AnimationPlayer" parent="FollowerArcher/Sprite2D" unique_id=1604150692]
-libraries/ = SubResource("AnimationLibrary_dubn7")
-
-[node name="CharacterAnimationTree" type="AnimationTree" parent="FollowerArcher/Sprite2D" unique_id=1290782130]
-tree_root = SubResource("AnimationNodeStateMachine_ey6mn")
-anim_player = NodePath("../AnimationPlayer")
-parameters/attack_blend_space/blend_position = Vector2(0, 0)
-parameters/idle_blend_space/blend_position = Vector2(-0.0008110404, 0)
-parameters/move_blend_space/blend_position = Vector2(0, 0)
-
-[node name="NecroLord" type="Node2D" parent="." unique_id=788405513]
-script = ExtResource("1_r7kja")
-metadata/_custom_type_script = "uid://i5035gcsyrnn"
-
-[node name="Sprite2D" type="Sprite2D" parent="NecroLord" unique_id=1700663832]
-texture_filter = 1
-scale = Vector2(2, 2)
-texture = ExtResource("5_nfdcu")
-hframes = 12
-vframes = 4
-frame = 4
-
-[node name="CharacterAnimationPlayer" type="AnimationPlayer" parent="NecroLord/Sprite2D" unique_id=1973808850]
-libraries/ = SubResource("AnimationLibrary_dubn7")
-
-[node name="CharacterAnimationTree" type="AnimationTree" parent="NecroLord/Sprite2D" unique_id=950470949]
-tree_root = SubResource("AnimationNodeStateMachine_ey6mn")
-anim_player = NodePath("../AnimationPlayer")
-parameters/attack_blend_space/blend_position = Vector2(0, 0)
-parameters/idle_blend_space/blend_position = Vector2(-0.0008110404, 0)
-parameters/move_blend_space/blend_position = Vector2(0, 0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=239344784]
+shape = SubResource("CircleShape2D_s2ble")
