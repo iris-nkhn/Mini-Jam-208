@@ -9,4 +9,4 @@
 position = Vector2(209, 167)
 
 [node name="Knight" parent="." unique_id=1711678911 instance=ExtResource("2_twpsu")]
-position = Vector2(379, 155)
+position = Vector2(213, 215)
