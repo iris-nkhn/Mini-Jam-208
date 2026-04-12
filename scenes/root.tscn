@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cq6bsdr6wjdp6" path="res://scenes/necro/necro.tscn" id="1_j5px3"]
 [ext_resource type="Texture2D" uid="uid://dkagkyf12bu0v" path="res://assets/characters/necrolord_spritesheet.png" id="2_twpsu"]
+[ext_resource type="PackedScene" uid="uid://bwtvbuq2bhvir" path="res://scenes/enemies/tombstone/tombstone.tscn" id="3_lrqlo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lrqlo"]
 atlas = ExtResource("2_twpsu")
@@ -47,3 +48,9 @@ position = Vector2(343, 249)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Necro" unique_id=2053515525]
 sprite_frames = SubResource("SpriteFrames_j287u")
 frame_progress = 0.62341744
+
+[node name="Tombstone" parent="." unique_id=1036289464 instance=ExtResource("3_lrqlo")]
+position = Vector2(209, 167)
+
+[node name="Tombstone2" parent="." unique_id=821183817 instance=ExtResource("3_lrqlo")]
+position = Vector2(648, 188)

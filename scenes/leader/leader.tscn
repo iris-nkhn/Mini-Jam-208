@@ -7,10 +7,10 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_jbwig"]
 
 [sub_resource type="Curve2D" id="Curve2D_mnww2"]
+bake_interval = 30.0
 
 [node name="Leader" type="CharacterBody2D" unique_id=1288376457]
 rotation = 0.002458863
-collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_mnww2")
 
@@ -29,5 +29,8 @@ top_level = true
 curve = SubResource("Curve2D_mnww2")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=575253066]
+top_level = true
+collision_layer = 0
+collision_mask = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=155577314]

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c3a7ai6m6vb70"]
 
 [ext_resource type="Texture2D" uid="uid://d0rurjs1si8ow" path="res://assets/characters/skelly_spritesheet.png" id="1_b5sj2"]
+[ext_resource type="Script" uid="uid://i5035gcsyrnn" path="res://scenes/follower/follower_1.gd" id="1_bhxwe"]
 [ext_resource type="Script" uid="uid://bmulpyo3hugri" path="res://scenes/follower/area_2d.gd" id="2_b5sj2"]
 
 [sub_resource type="Animation" id="Animation_bhxwe"]
@@ -341,15 +342,18 @@ states/idle_blend_space/position = Vector2(378, 164)
 states/move_blend_space/node = SubResource("AnimationNodeBlendSpace2D_v7p8g")
 states/move_blend_space/position = Vector2(664, 164)
 transitions = ["Start", "idle_blend_space", SubResource("AnimationNodeStateMachineTransition_wtktj"), "idle_blend_space", "move_blend_space", SubResource("AnimationNodeStateMachineTransition_y86m2"), "move_blend_space", "idle_blend_space", SubResource("AnimationNodeStateMachineTransition_2empm"), "move_blend_space", "attack_blend_space", SubResource("AnimationNodeStateMachineTransition_lkbbp"), "attack_blend_space", "move_blend_space", SubResource("AnimationNodeStateMachineTransition_u440e"), "attack_blend_space", "idle_blend_space", SubResource("AnimationNodeStateMachineTransition_r77ds"), "idle_blend_space", "attack_blend_space", SubResource("AnimationNodeStateMachineTransition_63fyf")]
+graph_offset = Vector2(0, -40.35391)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s2ble"]
 radius = 20.0
 
 [node name="Follower1" type="PathFollow2D" unique_id=491673986]
+rotates = false
 loop = false
+script = ExtResource("1_bhxwe")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1435422461]
-scale = Vector2(0.1, 0.1)
+scale = Vector2(2, 2)
 texture = ExtResource("1_b5sj2")
 hframes = 12
 vframes = 4

@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name leader extends CharacterBody2D
 
 #esto es un global coords
 var goal : Vector2 
@@ -7,6 +7,8 @@ var segments = 10
 var tail : Array[PathFollow2D]
 var debug_color : Color = Color(0.808, 0.0, 0.0, 1.0)
 var path : Curve2D = Curve2D.new()
+enum undead_types{NORMAL, SWORD, ARCHER, HALBERD}
+
 @onready var enclosed_area : Area2D = $Area2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,9 +23,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	update_tail()
-	path.add_point(position)
-	if path.point_count > 300:
-		path.remove_point(0)
+
 	queue_redraw()
 
 
@@ -53,24 +53,31 @@ func set_goal(_goal_global: Vector2) -> void:
 func goal_local() -> Vector2:
 	return to_local(goal)
 
-func new_segment() -> Node2D:
+func new_segment(undead_type : undead_types) -> Node2D:
 	var scene = load("res://scenes/follower/follower_1.tscn")
 	scene = scene.instantiate()
-
+	tail.append(scene)
+	$Path2D.add_child(scene)
+	scene.set_sprite(undead_type)
 	return scene
 
 func initialize_tail() -> void:
 	for i in segments - 1 :
-		var segment : PathFollow2D = new_segment()
-		tail.append(segment)
-		$Path2D.add_child(segment)
+		var segment : PathFollow2D = new_segment(undead_types.NORMAL)
+		
 		segment.set_progress(16 * i)
 		
 
 func update_tail() -> void:
+	#set progress of each part
 	for i in tail.size():
-		tail[i].progress_ratio = 1 - 0.10 * i
+		var progress = 1 - (i * 1.0/(tail.size() -1))
+		tail[i].progress_ratio = progress
 		
+	#change line
+	path.add_point(position)
+	if path.point_count > 200:
+		path.remove_point(0)
 
 func check_closed_loop() -> bool:
 	var A = path.get_closest_point(position)
@@ -89,17 +96,25 @@ func circle_within() -> void:
 	var points = path.get_baked_points()
 	var polygon : CollisionPolygon2D = CollisionPolygon2D.new()
 	polygon.set_polygon(points)
-	enclosed_area.add_child(polygon)
+	enclosed_area.call_deferred("add_child",polygon)
+	
 	var body_list = enclosed_area.get_overlapping_bodies()
 	for i in body_list:
-		if i.is_class("grave"):
-			var grave_type
-			remove_grave(i)
-			revive(grave_type)
+		print(i.name)
+		if i.is_class("enemy"):
+			var grave_type = i.turn_undead()
+			
+	check_within()
 	
 	pass
-func remove_grave(a) -> void:
-	pass
-
-func revive(b) -> void:
-	pass
+func check_within() -> void:
+	var polygon = enclosed_area.get_child(0)
+	var body_list = enclosed_area.get_overlapping_bodies()
+	for i in body_list:
+		print(i.get_class())
+		if i is Enemy:
+		
+			var grave_type = i.turn_undead()
+			new_segment(grave_type)
+	if polygon != null:
+		polygon.queue_free()

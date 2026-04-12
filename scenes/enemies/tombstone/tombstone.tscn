@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bwtvbuq2bhvir"]
+
+[ext_resource type="Texture2D" uid="uid://cp8wcwxvxxf4g" path="res://assets/sprites/tombstone_sprite.png" id="1_h4egq"]
+[ext_resource type="PackedScene" uid="uid://dvalkvrcmkk4v" path="res://scenes/enemies/enemy.tscn" id="2_acp2b"]
+
+[node name="Tombstone" type="Node2D" unique_id=1036289464]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=479688854]
+texture = ExtResource("1_h4egq")
+
+[node name="Enemy" parent="." unique_id=1730699001 instance=ExtResource("2_acp2b")]
