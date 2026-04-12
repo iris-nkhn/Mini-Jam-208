@@ -13,9 +13,10 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func _draw() -> void:
-	print(to_local(target.global_position))
-	draw_line(Vector2.ZERO,to_local(target.global_position),Color("Red"))
-
+	#print(to_local(target.global_position))
+	#draw_line(Vector2.ZERO,to_local(target.global_position),Color("Red"))
+	pass
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	queue_redraw()
@@ -28,7 +29,7 @@ func _physics_process(delta: float) -> void:
 	pass
 
 func turn_undead() -> undead_types:
-	print("TUMBA EN CIRCULO")
+	print("ENEMIGO EN CIRCULO")
 	get_parent().queue_free()
 
 	return undead_types.NORMAL

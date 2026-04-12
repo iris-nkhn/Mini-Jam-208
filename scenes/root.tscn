@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://cqak04x7ktl1r"]
 
+[ext_resource type="PackedScene" uid="uid://bt32a60sjm4d2" path="res://scenes/enemies/knight/knight.tscn" id="2_twpsu"]
 [ext_resource type="PackedScene" uid="uid://bwtvbuq2bhvir" path="res://scenes/enemies/tombstone/tombstone.tscn" id="3_lrqlo"]
 
 [node name="Root" type="Node2D" unique_id=2145283830]
 
 [node name="Tombstone" parent="." unique_id=1036289464 instance=ExtResource("3_lrqlo")]
 position = Vector2(209, 167)
+
+[node name="Knight" parent="." unique_id=1711678911 instance=ExtResource("2_twpsu")]
+position = Vector2(379, 155)

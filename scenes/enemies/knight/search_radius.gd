@@ -18,9 +18,9 @@ func get_closest_target() -> Node2D:
 	list = get_overlapping_bodies()
 	for i in list:
 		var a = global_position.distance_squared_to(i.global_position)
-		print(a)
+		#print(a)
 		var b = global_position.distance_squared_to(closest.global_position)
-		print(b)
+		#print(b)
 		var c = min(a,b)
 		if a == c:
 			closest = i

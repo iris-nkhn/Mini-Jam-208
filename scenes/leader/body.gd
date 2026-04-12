@@ -105,12 +105,6 @@ func circle_within() -> void:
 	polygon.set_polygon(points)
 	enclosed_area.call_deferred("add_child",polygon)
 	
-	var body_list = enclosed_area.get_overlapping_bodies()
-	for i in body_list:
-		print(i.name)
-		if i.is_class("enemy"):
-			var grave_type = i.turn_undead()
-			
 	check_within()
 	
 	pass
