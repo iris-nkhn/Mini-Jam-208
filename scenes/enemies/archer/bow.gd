@@ -1,6 +1,7 @@
 extends Node2D
 
-@onready var archer = get_parent()
+@onready var archer : Enemy = get_parent()
+var arrow_speed : float = 5
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
@@ -17,6 +18,13 @@ func _process(delta: float) -> void:
 
 func fire_bow() -> void:
 	var arrow = load("res://scenes/enemies/archer/arrow.tscn")
-	arrow = arrow.instantiate() as AnimatableBody2D
+	arrow = arrow.instantiate() as RigidBody2D
 	get_tree().root.add_child(arrow)
 	arrow.global_position = global_position
+	arrow.apply_force(firing_calculations())
+
+func firing_calculations() -> Vector2:
+
+	var dir = archer.target.global_position - archer.global_position
+	dir = dir.normalized()
+	return dir * arrow_speed

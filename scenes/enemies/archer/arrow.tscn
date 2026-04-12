@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qhvnr"]
 size = Vector2(11, 20)
 
-[node name="Arrow" type="AnimatableBody2D" unique_id=1195369658]
+[node name="Arrow" type="RigidBody2D" unique_id=1554513101]
 collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1993495212]
