@@ -4,7 +4,7 @@ class_name leader extends CharacterBody2D
 var goal : Vector2 
 @export var speed: float = 10000
 
-@export var initial_segments = 5
+@export var initial_segments = 5 
 var tail : Array[PathFollow2D]
 var path : Curve2D = Curve2D.new()
 var max_len : int = 200
