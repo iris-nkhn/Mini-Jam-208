@@ -19,7 +19,7 @@ var last_pos : Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
+	set_sprite(type)
 	pass # Replace with function body.
 
 func _draw() -> void:
@@ -96,7 +96,7 @@ func play_animation_direction(_direction : String) -> void:
 	if _direction == "Down":
 		animator.play("move_down")
 		
-func set_sprite(type : leader.undead_types) -> void:
+func set_sprite(type : Enemy.undead_types) -> void:
 	if type==0:
 		sprite.texture = load("res://assets/characters/skelly_spritesheet.png")
 	if type==1:
