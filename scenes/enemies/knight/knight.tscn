@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://csh2qgqr8qpc7" path="res://scenes/enemies/enemy.gd" id="1_vb1kc"]
 [ext_resource type="Script" uid="uid://c2xs3topqh8nx" path="res://scenes/enemies/knight/search_radius.gd" id="2_1wcmj"]
 [ext_resource type="Script" uid="uid://bywwqiqxou20n" path="res://scenes/enemies/knight/sword.gd" id="3_cf0je"]
+[ext_resource type="PackedScene" uid="uid://bwffrlos54r4c" path="res://scenes/visuals/components/char_anim_sprite_component.tscn" id="4_gruop"]
+[ext_resource type="Texture2D" uid="uid://cq71ye23squ7t" path="res://assets/characters/knight_sword_spritesheet.png" id="5_pj38i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6xk8f"]
 
@@ -13,7 +15,7 @@ radius = 200.0
 collision_layer = 2
 motion_mode = 1
 script = ExtResource("1_vb1kc")
-type = 2
+type = 1
 speed = 30.0
 attack_delay = 1.0
 
@@ -29,3 +31,6 @@ shape = SubResource("CircleShape2D_xlwt4")
 
 [node name="Sword" type="Node2D" parent="." unique_id=2123982509]
 script = ExtResource("3_cf0je")
+
+[node name="SpriteWithAnimationComponent" parent="." unique_id=1776504928 instance=ExtResource("4_gruop")]
+texture = ExtResource("5_pj38i")

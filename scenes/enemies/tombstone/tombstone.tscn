@@ -9,4 +9,5 @@
 texture = ExtResource("1_h4egq")
 
 [node name="Enemy" parent="." unique_id=1730699001 instance=ExtResource("2_acp2b")]
+visible = false
 speed = 0.0

@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var knight = get_parent()
+@onready var knight = get_parent() as Enemy
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
@@ -20,4 +20,8 @@ func attack_target() -> void:
 	#print(global_position.distance_to(target.global_position))
 	if global_position.distance_to(knight.target.global_position) <= knight.attack_radius:
 		print("daño")
+		#knight.animator.play("move_right")
 		knight.target.take_damage(knight.damage)
+
+#func play_attack() -> void:
+	
