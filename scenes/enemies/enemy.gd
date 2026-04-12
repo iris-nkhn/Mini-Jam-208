@@ -23,10 +23,7 @@ func _draw() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	queue_redraw()
-	attack_delay_counter += delta
-	if attack_delay_counter >= attack_delay:
-		attack_delay_counter = 0
-		attack_target()
+
 	pass
 
 func _physics_process(delta: float) -> void:
@@ -47,9 +44,3 @@ func move_towards_target() -> void:
 	velocity = target.global_position - global_position
 	velocity = velocity.normalized() * speed
 	move_and_slide()
-
-func attack_target() -> void:
-	#print(global_position.distance_to(target.global_position))
-	if global_position.distance_to(target.global_position) <= attack_radius:
-		print("daño")
-		target.take_damage(damage)

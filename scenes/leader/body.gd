@@ -2,19 +2,20 @@ class_name leader extends CharacterBody2D
 
 #esto es un global coords
 var goal : Vector2 
-var speed: float = 10000
+@export var speed: float = 10000
 
-var initial_segments = 2
+@export var initial_segments = 5
 var tail : Array[PathFollow2D]
 var path : Curve2D = Curve2D.new()
 var max_len : int = 200
+@export var min_len : int = 4
 
 var debug_color : Color = Color(0.808, 0.0, 0.0, 1.0)
 
 
 
 enum undead_types{NORMAL, SWORD, ARCHER, HALBERD}
-var life : int = 5
+@export var life : int = 5
 var damage : int = 0
 
 
@@ -135,7 +136,8 @@ func _on_damage_taken(_damage : int) -> void:
 	damage += _damage
 	if damage >= life:
 		damage = 0
-		lose_life()
+		if tail.size() >= min_len:
+			lose_life()
 		
 func lose_life() -> void:
 	remove_segment()

@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bk52hnw4gdq0r"]
+
+[ext_resource type="Script" uid="uid://csh2qgqr8qpc7" path="res://scenes/enemies/enemy.gd" id="1_ixkuk"]
+[ext_resource type="Script" uid="uid://c2xs3topqh8nx" path="res://scenes/enemies/knight/search_radius.gd" id="2_i13vf"]
+[ext_resource type="Script" uid="uid://cmsj3ylagk65m" path="res://scenes/enemies/archer/bow.gd" id="3_231cr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6xk8f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xlwt4"]
+radius = 200.0
+
+[node name="Archer" type="CharacterBody2D" unique_id=1711678911]
+collision_layer = 2
+motion_mode = 1
+script = ExtResource("1_ixkuk")
+type = 2
+speed = 30.0
+attack_delay = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1675349564]
+shape = SubResource("CircleShape2D_6xk8f")
+
+[node name="SearchRadius" type="Area2D" parent="." unique_id=2003389709]
+collision_layer = 0
+script = ExtResource("2_i13vf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SearchRadius" unique_id=1363423680]
+shape = SubResource("CircleShape2D_xlwt4")
+
+[node name="Bow" type="Node2D" parent="." unique_id=838174208]
+script = ExtResource("3_231cr")
