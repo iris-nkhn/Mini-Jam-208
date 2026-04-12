@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bej0a3vuj6dfs"
-path="res://.godot/imported/aparition_particles_sprite.png-92e2ac8c89c99748c2fb87df4aed5c69.ctex"
+path="res://.godot/imported/aparition_particles_sprite.png-b0fb9f2c0d602983596088dbe635acef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/aparition_particles_sprite.png"
-dest_files=["res://.godot/imported/aparition_particles_sprite.png-92e2ac8c89c99748c2fb87df4aed5c69.ctex"]
+source_file="res://assets/particles/aparition_particles_sprite.png"
+dest_files=["res://.godot/imported/aparition_particles_sprite.png-b0fb9f2c0d602983596088dbe635acef.ctex"]
 
 [params]
 
