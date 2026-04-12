@@ -1,9 +1,8 @@
-[gd_scene format=3 uid="uid://c3a7ai6m6vb70"]
+[gd_scene format=3 uid="uid://j078ivabm8e4"]
 
-[ext_resource type="Texture2D" uid="uid://d0rurjs1si8ow" path="res://assets/characters/skelly_spritesheet.png" id="1_b5sj2"]
-[ext_resource type="Script" uid="uid://i5035gcsyrnn" path="res://scenes/follower/follower_1.gd" id="1_bhxwe"]
-[ext_resource type="Script" uid="uid://bmulpyo3hugri" path="res://scenes/follower/area_2d.gd" id="2_b5sj2"]
-[ext_resource type="Script" uid="uid://0eivwrc7aqf1" path="res://scenes/follower/animatable_body_2d.gd" id="4_846ri"]
+[ext_resource type="Script" uid="uid://i5035gcsyrnn" path="res://scenes/follower/follower_1.gd" id="1_h32b2"]
+[ext_resource type="Texture2D" uid="uid://d0rurjs1si8ow" path="res://assets/characters/skelly_spritesheet.png" id="2_wruvn"]
+[ext_resource type="Script" uid="uid://bmulpyo3hugri" path="res://scenes/follower/area_2d.gd" id="3_anfcp"]
 
 [sub_resource type="Animation" id="Animation_bhxwe"]
 length = 0.001
@@ -253,70 +252,70 @@ _data = {
 &"move_up": SubResource("Animation_876y2")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cy5kf"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_glx11"]
 animation = &"attack_up"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6npss"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_unjuf"]
 animation = &"attack_down"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c0vms"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7kyet"]
 animation = &"attack_left"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2e03a"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_r3n1i"]
 animation = &"attack_right"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_kxqf4"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_cy5kf")
+blend_point_0/node = SubResource("AnimationNodeAnimation_glx11")
 blend_point_0/pos = Vector2(0, 1)
-blend_point_1/node = SubResource("AnimationNodeAnimation_6npss")
+blend_point_1/node = SubResource("AnimationNodeAnimation_unjuf")
 blend_point_1/pos = Vector2(0, -1)
-blend_point_2/node = SubResource("AnimationNodeAnimation_c0vms")
+blend_point_2/node = SubResource("AnimationNodeAnimation_7kyet")
 blend_point_2/pos = Vector2(-1, 0)
-blend_point_3/node = SubResource("AnimationNodeAnimation_2e03a")
+blend_point_3/node = SubResource("AnimationNodeAnimation_r3n1i")
 blend_point_3/pos = Vector2(1, 0)
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yeq3s"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c6kcv"]
 animation = &"idle_down"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_g3eyf"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_w6ypj"]
 animation = &"idle_up"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wllag"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hc7si"]
 animation = &"idle_left"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_625jn"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_elx7m"]
 animation = &"idle_right"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_y6tfh"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_yeq3s")
+blend_point_0/node = SubResource("AnimationNodeAnimation_c6kcv")
 blend_point_0/pos = Vector2(0, -1)
-blend_point_1/node = SubResource("AnimationNodeAnimation_g3eyf")
+blend_point_1/node = SubResource("AnimationNodeAnimation_w6ypj")
 blend_point_1/pos = Vector2(0, 1)
-blend_point_2/node = SubResource("AnimationNodeAnimation_wllag")
+blend_point_2/node = SubResource("AnimationNodeAnimation_hc7si")
 blend_point_2/pos = Vector2(-1, 0)
-blend_point_3/node = SubResource("AnimationNodeAnimation_625jn")
+blend_point_3/node = SubResource("AnimationNodeAnimation_elx7m")
 blend_point_3/pos = Vector2(1, 0)
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2qxgb"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_agffw"]
 animation = &"move_down"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_g0wa8"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_75ii2"]
 animation = &"move_up"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6gvfc"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pebuw"]
 animation = &"move_left"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vqodk"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8ktwh"]
 animation = &"move_right"
 
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_v7p8g"]
-blend_point_0/node = SubResource("AnimationNodeAnimation_2qxgb")
+blend_point_0/node = SubResource("AnimationNodeAnimation_agffw")
 blend_point_0/pos = Vector2(0, -1)
-blend_point_1/node = SubResource("AnimationNodeAnimation_g0wa8")
+blend_point_1/node = SubResource("AnimationNodeAnimation_75ii2")
 blend_point_1/pos = Vector2(0, 1)
-blend_point_2/node = SubResource("AnimationNodeAnimation_6gvfc")
+blend_point_2/node = SubResource("AnimationNodeAnimation_pebuw")
 blend_point_2/pos = Vector2(-1, 0)
-blend_point_3/node = SubResource("AnimationNodeAnimation_vqodk")
+blend_point_3/node = SubResource("AnimationNodeAnimation_8ktwh")
 blend_point_3/pos = Vector2(1, 0)
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wtktj"]
@@ -351,12 +350,12 @@ radius = 20.0
 [node name="Follower1" type="PathFollow2D" unique_id=491673986]
 rotates = false
 loop = false
-script = ExtResource("1_bhxwe")
+script = ExtResource("1_h32b2")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1435422461]
 texture_filter = 1
 scale = Vector2(2, 2)
-texture = ExtResource("1_b5sj2")
+texture = ExtResource("2_wruvn")
 hframes = 12
 vframes = 4
 frame = 4
@@ -372,15 +371,13 @@ parameters/idle_blend_space/blend_position = Vector2(-0.0008110404, 0)
 parameters/move_blend_space/blend_position = Vector2(0, 0)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1274580573]
-script = ExtResource("2_b5sj2")
+script = ExtResource("3_anfcp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=870890676]
 shape = SubResource("CircleShape2D_s2ble")
 
 [node name="AnimatableBody2D" type="CharacterBody2D" parent="." unique_id=641382878]
 collision_mask = 0
-motion_mode = 1
-script = ExtResource("4_846ri")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=239344784]
 shape = SubResource("CircleShape2D_s2ble")

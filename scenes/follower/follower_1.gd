@@ -1,6 +1,7 @@
 class_name follower extends Node2D
 
-@onready var controller = $Controller
+
+
 @onready var sprite = $Sprite2D
 @onready var animator = $Sprite2D/CharacterAnimationPlayer
 var direction : Vector2
@@ -8,7 +9,7 @@ var last_pos : Vector2
 var i : float = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
+
 	pass # Replace with function body.
 
 func _draw() -> void:
