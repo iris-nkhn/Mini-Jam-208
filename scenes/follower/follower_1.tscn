@@ -369,8 +369,13 @@ parameters/attack_blend_space/blend_position = Vector2(0, 0)
 parameters/idle_blend_space/blend_position = Vector2(-0.0008110404, 0)
 parameters/move_blend_space/blend_position = Vector2(0, 0)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1529005253]
+[node name="Area2D" type="Area2D" parent="." unique_id=1274580573]
 script = ExtResource("2_b5sj2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=870890676]
+shape = SubResource("CircleShape2D_s2ble")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=280078989]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=239344784]
 shape = SubResource("CircleShape2D_s2ble")

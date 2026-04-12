@@ -51,6 +51,3 @@ frame_progress = 0.62341744
 
 [node name="Tombstone" parent="." unique_id=1036289464 instance=ExtResource("3_lrqlo")]
 position = Vector2(209, 167)
-
-[node name="Tombstone2" parent="." unique_id=821183817 instance=ExtResource("3_lrqlo")]
-position = Vector2(648, 188)

@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name necro extends CharacterBody2D
 
 
 const SPEED = 50

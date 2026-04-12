@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cp8wcwxvxxf4g" path="res://assets/sprites/tombstone_sprite.png" id="1_h4egq"]
 [ext_resource type="PackedScene" uid="uid://dvalkvrcmkk4v" path="res://scenes/enemies/enemy.tscn" id="2_acp2b"]
+[ext_resource type="PackedScene" uid="uid://bt32a60sjm4d2" path="res://scenes/enemies/knight/knight.tscn" id="3_bcf1k"]
 
 [node name="Tombstone" type="Node2D" unique_id=1036289464]
 
@@ -9,3 +10,7 @@
 texture = ExtResource("1_h4egq")
 
 [node name="Enemy" parent="." unique_id=1730699001 instance=ExtResource("2_acp2b")]
+speed = 0.0
+
+[node name="ENEMIGO" parent="." unique_id=1711678911 instance=ExtResource("3_bcf1k")]
+position = Vector2(222, 338)

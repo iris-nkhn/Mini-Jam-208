@@ -1,4 +1,4 @@
-extends Node2D
+class_name follower extends Node2D
 
 @onready var controller = $Controller
 @onready var sprite = $Sprite2D
@@ -43,11 +43,11 @@ func set_sprite(type : leader.undead_types) -> void:
 func get_direction(pos : Vector2) -> String:
 	var A := pos # last position
 	var B := global_position # current position
-	var direction := B - A
-	direction = direction.normalized()
-	self.direction = direction
+	var _direction := B - A
+	_direction = _direction.normalized()
+	self.direction = _direction
 
-	var angle = direction.angle()
+	var angle = _direction.angle()
 	var cos_angle = rad_to_deg(cos(angle))
 	var sin_angle = rad_to_deg(sin(angle))
 	queue_redraw()
@@ -65,12 +65,12 @@ func get_direction(pos : Vector2) -> String:
 			return "Up"
 		else:
 			return "Down"
-func play_animation_direction(direction : String) -> void:
-	if direction == "Left":
+func play_animation_direction(_direction : String) -> void:
+	if _direction == "Left":
 		animator.play("move_left")
-	if direction == "Right":
+	if _direction == "Right":
 		animator.play("move_right")
-	if direction == "Up":
+	if _direction == "Up":
 		animator.play("move_up")
-	if direction == "Down":
+	if _direction == "Down":
 		animator.play("move_down")

@@ -21,6 +21,7 @@ script = ExtResource("4_mnww2")
 shape = SubResource("CircleShape2D_jbwig")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1054227989]
+visible = false
 scale = Vector2(0.3932153, 0.3932153)
 texture = ExtResource("4_td0t5")
 
