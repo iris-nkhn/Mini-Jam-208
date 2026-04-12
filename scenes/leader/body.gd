@@ -127,5 +127,6 @@ func _on_damage_taken(_damage : int) -> void:
 		lose_life()
 		
 func lose_life() -> void:
-	
+	#cualquier cosa literal
 	pass
+	
