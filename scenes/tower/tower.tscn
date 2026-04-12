@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://brtlta8w3dq4l"]
+
+[ext_resource type="Texture2D" uid="uid://bufa2iv11sgf6" path="res://assets/sprites/tower_spritesheet.png" id="1_mg2hd"]
+
+[sub_resource type="Animation" id="Animation_r21n7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_cbwxl"]
+resource_name = "conquer"
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
+}
+
+[sub_resource type="Animation" id="Animation_nfofi"]
+resource_name = "spawn"
+length = 0.7500125
+loop_mode = 1
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vec08"]
+_data = {
+&"RESET": SubResource("Animation_r21n7"),
+&"conquer": SubResource("Animation_cbwxl"),
+&"spawn": SubResource("Animation_nfofi")
+}
+
+[node name="Tower" type="Node2D" unique_id=1851686010]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=85697151]
+texture_filter = 1
+texture = ExtResource("1_mg2hd")
+hframes = 6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=198728355]
+libraries/ = SubResource("AnimationLibrary_vec08")
+playback_auto_capture = false
