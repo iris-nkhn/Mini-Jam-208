@@ -2,6 +2,7 @@ class_name necro extends CharacterBody2D
 
 
 const SPEED = 50
+var hp = 3
 
 func _ready() -> void:
 	pass
@@ -26,3 +27,6 @@ func _physics_process(delta: float) -> void:
 		velocity = Vector2.ZERO
 	
 	move_and_slide()
+
+func take_damage(damage : int) -> void:
+	

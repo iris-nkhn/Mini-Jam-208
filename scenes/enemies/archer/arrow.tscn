@@ -1,15 +1,22 @@
 [gd_scene format=3 uid="uid://yeuam1vr8m38"]
 
 [ext_resource type="Texture2D" uid="uid://bqmmj43uj11fa" path="res://assets/sprites/arrow_sprite.png" id="1_hjwpv"]
+[ext_resource type="Script" uid="uid://bmmpr3mcip46j" path="res://scenes/enemies/archer/arrow.gd" id="1_qhvnr"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hjwpv"]
+friction = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qhvnr"]
 size = Vector2(11, 20)
 
 [node name="Arrow" type="RigidBody2D" unique_id=1554513101]
 collision_layer = 8
+physics_material_override = SubResource("PhysicsMaterial_hjwpv")
+script = ExtResource("1_qhvnr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1993495212]
 position = Vector2(0.5, 0)
+rotation = 4.712389
 shape = SubResource("RectangleShape2D_qhvnr")
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=22171879]

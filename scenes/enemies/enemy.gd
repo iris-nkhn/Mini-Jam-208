@@ -32,7 +32,9 @@ func _process(delta: float) -> void:
 	i = i + delta
 	
 	if i >= 0.05:
-		play_animation_direction(get_direction(last_pos))
+		
+		play_animation_move_direction(get_direction(last_pos))
+			
 		i = 0
 	
 	last_pos = global_position
@@ -86,7 +88,7 @@ func get_direction(pos : Vector2) -> String:
 		else:
 			return "Down"
 
-func play_animation_direction(_direction : String) -> void:
+func play_animation_move_direction(_direction : String) -> void:
 	if _direction == "Left":
 		animator.play("move_left")
 	if _direction == "Right":
@@ -95,6 +97,16 @@ func play_animation_direction(_direction : String) -> void:
 		animator.play("move_up")
 	if _direction == "Down":
 		animator.play("move_down")
+		
+func play_animation_attack_direction(_direction : String) -> void:
+	if _direction == "Left":
+		animator.play("attack_left")
+	if _direction == "Right":
+		animator.play("attack_right")
+	if _direction == "Up":
+		animator.play("attack_up")
+	if _direction == "Down":
+		animator.play("attack_down")
 		
 func set_sprite(type : Enemy.undead_types) -> void:
 	if type==0:

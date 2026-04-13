@@ -20,7 +20,7 @@ func attack_target() -> void:
 	#print(global_position.distance_to(target.global_position))
 	if global_position.distance_to(knight.target.global_position) <= knight.attack_radius:
 		print("daño")
-		#knight.animator.play("move_right")
+		knight.play_animation_attack_direction(knight.get_direction(knight.last_pos))
 		knight.target.take_damage(knight.damage)
 
 #func play_attack() -> void:
