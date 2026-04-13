@@ -4,7 +4,7 @@ extends Area2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	area_entered.connect(Leader._on_area_entered.bind(self))
+	area_entered.connect(Tracker.leader._on_area_entered.bind(self))
 
 	pass # Replace with function body.
 

@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://cqak04x7ktl1r"]
 
-[ext_resource type="PackedScene" uid="uid://bt32a60sjm4d2" path="res://scenes/enemies/knight/knight.tscn" id="2_twpsu"]
+[ext_resource type="PackedScene" uid="uid://bt32a60sjm4d2" path="res://scenes/enemies/knight/knight_sword_REMOTE_54934.tscn" id="2_twpsu"]
 [ext_resource type="PackedScene" uid="uid://bwtvbuq2bhvir" path="res://scenes/enemies/tombstone/tombstone.tscn" id="3_lrqlo"]
 [ext_resource type="PackedScene" uid="uid://cbb0gbdeu7rba" path="res://scenes/enemies/archer/archer.tscn" id="3_sqa0i"]
+[ext_resource type="PackedScene" uid="uid://c4noyvt4p4kvi" path="res://scenes/leader/leader.tscn" id="4_kycxp"]
+[ext_resource type="PackedScene" uid="uid://cq6bsdr6wjdp6" path="res://scenes/necro/necro.tscn" id="5_j287u"]
+[ext_resource type="PackedScene" uid="uid://nlc7wmk4ddmy" path="res://scenes/banner/banner.tscn" id="6_5sfjl"]
 
 [node name="Root" type="Node2D" unique_id=2145283830]
 
@@ -14,3 +17,11 @@ position = Vector2(457, 247)
 
 [node name="Archer" parent="." unique_id=293078471 instance=ExtResource("3_sqa0i")]
 position = Vector2(736, 593)
+
+[node name="Leader" parent="." unique_id=1288376457 instance=ExtResource("4_kycxp")]
+position = Vector2(843.0001, 151.00002)
+
+[node name="Necro" parent="." unique_id=1549876970 instance=ExtResource("5_j287u")]
+position = Vector2(957, 143)
+
+[node name="Banner" parent="." unique_id=402454794 instance=ExtResource("6_5sfjl")]

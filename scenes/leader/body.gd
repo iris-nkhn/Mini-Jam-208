@@ -22,6 +22,7 @@ var damage : int = 0
 @onready var enclosed_area : Area2D = $Area2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Tracker.leader = self
 	initialize_tail()
 	$Path2D.set_curve(path)
 

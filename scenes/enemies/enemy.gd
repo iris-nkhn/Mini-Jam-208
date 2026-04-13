@@ -2,8 +2,8 @@ class_name Enemy extends CharacterBody2D
 
 enum undead_types{NORMAL, SWORD, ARCHER, HALBERD}
 @export var type : undead_types
-var default_target : Node2D = Necro
-var target : Node2D = default_target
+@onready var default_target : Node2D = Tracker.necro
+@onready var target : Node2D = default_target
 @export var speed : float = 10
 @export var attack_radius : float = 50
 @export var damage : int = 1
@@ -29,6 +29,7 @@ func _draw() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+
 	i = i + delta
 	
 	if i >= 0.05:
@@ -43,6 +44,7 @@ func _process(delta: float) -> void:
 
 
 func _physics_process(_delta: float) -> void:
+	default_target = Tracker.necro
 	if target == null:
 		target = default_target
 	move_towards_target()
@@ -52,7 +54,7 @@ func _physics_process(_delta: float) -> void:
 
 func turn_undead() -> undead_types:
 	print("ENEMIGO EN CIRCULO")
-	get_parent().queue_free()
+	queue_free()
 
 	return undead_types.NORMAL
 

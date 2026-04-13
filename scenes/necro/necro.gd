@@ -5,6 +5,7 @@ const SPEED = 50
 var hp = 3
 
 func _ready() -> void:
+	Tracker.necro = self
 	pass
 func _physics_process(delta: float) -> void:
 	# We create a local variable to store the input direction.
@@ -29,4 +30,6 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func take_damage(damage : int) -> void:
-	
+	hp -= damage
+	if hp == 0:
+		queue_free()
