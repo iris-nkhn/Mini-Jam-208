@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://cbb0gbdeu7rba"]
 
 [ext_resource type="Script" uid="uid://csh2qgqr8qpc7" path="res://scenes/enemies/enemy.gd" id="1_bm116"]
+[ext_resource type="Texture2D" uid="uid://ddktqtbpq0xrs" path="res://assets/characters/knight_archer_spritesheet.png" id="3_p80hm"]
 [ext_resource type="PackedScene" uid="uid://bwffrlos54r4c" path="res://scenes/visuals/components/char_anim_sprite_component.tscn" id="4_op56x"]
 [ext_resource type="Script" uid="uid://cmsj3ylagk65m" path="res://scenes/enemies/archer/bow.gd" id="4_p80hm"]
-[ext_resource type="Texture2D" uid="uid://cq71ye23squ7t" path="res://assets/characters/knight_sword_spritesheet.png" id="5_d1223"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6xk8f"]
 
@@ -19,7 +19,7 @@ attack_delay = 1.0
 shape = SubResource("CircleShape2D_6xk8f")
 
 [node name="SpriteWithAnimationComponent" parent="." unique_id=1776504928 instance=ExtResource("4_op56x")]
-texture = ExtResource("5_d1223")
+texture = ExtResource("3_p80hm")
 
 [node name="Bow" type="Node2D" parent="." unique_id=1159818075]
 script = ExtResource("4_p80hm")

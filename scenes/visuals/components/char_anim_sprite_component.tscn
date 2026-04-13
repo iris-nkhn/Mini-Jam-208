@@ -340,11 +340,10 @@ states/idle_blend_space/position = Vector2(378, 164)
 states/move_blend_space/node = SubResource("AnimationNodeBlendSpace2D_v7p8g")
 states/move_blend_space/position = Vector2(664, 164)
 transitions = ["Start", "idle_blend_space", SubResource("AnimationNodeStateMachineTransition_wtktj"), "idle_blend_space", "move_blend_space", SubResource("AnimationNodeStateMachineTransition_y86m2"), "move_blend_space", "idle_blend_space", SubResource("AnimationNodeStateMachineTransition_2empm"), "move_blend_space", "attack_blend_space", SubResource("AnimationNodeStateMachineTransition_lkbbp"), "attack_blend_space", "move_blend_space", SubResource("AnimationNodeStateMachineTransition_u440e"), "attack_blend_space", "idle_blend_space", SubResource("AnimationNodeStateMachineTransition_r77ds"), "idle_blend_space", "attack_blend_space", SubResource("AnimationNodeStateMachineTransition_63fyf")]
-graph_offset = Vector2(0, -40.35391)
+graph_offset = Vector2(16, -1.3539124)
 
 [node name="CharAnimSpriteComponent" type="Sprite2D" unique_id=1776504928]
 texture_filter = 1
-scale = Vector2(2, 2)
 texture = ExtResource("1_88l0r")
 hframes = 12
 vframes = 4
